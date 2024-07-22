@@ -1,0 +1,12 @@
+# Ignore Python-specific files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*__pycache__/
+
+# Ignore build directories
+dist/
+build/
+out/

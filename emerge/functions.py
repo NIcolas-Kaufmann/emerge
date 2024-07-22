@@ -6,15 +6,15 @@ import os
 
 
 
-#Read the data 
-
+#Simple wrapper that reads the data file contained with all the simulation results provided
+# returns a dict with the data
 def read_data(file_name = None):
     
     if(file_name == None):
      # Get the path of the directory where this script is located
         module_dir = os.path.dirname(__file__)
         # Construct the full path to the file
-        file_path = os.path.join(module_dir, "data.dat")
+        file_path = os.path.join(module_dir, "data","data.dat")
     else:
         file_path = file_name
 
@@ -27,7 +27,9 @@ def read_data(file_name = None):
 
 
 
-#
+#Subroutine that Calculates the time when the largest planetesimal reaches the transition mass (or moon/ 1e-3 M_\erath)
+#by logarithmically interpolating the grid of simulations
+# returns the timing as a function of the semi major axis, stellar mass , pebble flux and embryo factor
 def t_embryo(grid,r0,M_star,flux_peb,M_em_fact,mode="trans"):
     names = ["r0","M_star","flux_peb","M_em_fact"]
     x0 = [r0,M_star,flux_peb,M_em_fact]

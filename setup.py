@@ -8,8 +8,12 @@ setup(
         # List your dependencies here, for example:
         'requests',
         'numpy',
-        "astropy",
+        'scipy'
     ],
+    include_package_data=True,
+    package_data={
+        'emerge': ['data/*.dat'],
+    },
     author='Nicolas Kaufmann',
     author_email='nicolas.kaufmann@unibe.ch',
     description='Porvides the results from my papet () to inform when the embryos reach the tranisiton mass',
