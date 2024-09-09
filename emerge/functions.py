@@ -33,7 +33,7 @@ def read_data(file_name = None):
 def t_embryo(grid,r0,M_star,flux_peb,M_em_fact,mode="trans"):
     names = ["r0","M_star","flux_peb","M_em_fact"]
     x0 = [r0,M_star,flux_peb,M_em_fact]
-    x_p = np.vstack((grid[name] for name in names))
+    x_p = np.vstack(tuple(grid[name] for name in names))
 
     
     if(mode == "trans"):
